@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="22" role="img" aria-label="status: public beta">
+  <title>status: public beta</title>
+  <rect width="136" height="22" rx="5" fill="#171C2B"/>
+  <rect x="48" width="88" height="22" rx="5" fill="#E6A85C"/>
+  <path fill="#E6A85C" d="M48 0h5v22h-5z"/>
+  <g fill="#fff" font-family="Verdana,Segoe UI,sans-serif" font-size="11">
+    <text x="8" y="15">status</text>
+    <text x="56" y="15">public beta</text>
+  </g>
+</svg>

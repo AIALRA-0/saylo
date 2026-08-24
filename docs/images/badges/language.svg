@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="22" role="img" aria-label="docs: zh-CN and EN">
+  <title>docs: zh-CN and EN</title>
+  <rect width="130" height="22" rx="5" fill="#171C2B"/>
+  <rect x="40" width="90" height="22" rx="5" fill="#3178C6"/>
+  <path fill="#3178C6" d="M40 0h5v22h-5z"/>
+  <g fill="#fff" font-family="Verdana,Segoe UI,sans-serif" font-size="11">
+    <text x="8" y="15">docs</text>
+    <text x="48" y="15">zh-CN + EN</text>
+  </g>
+</svg>
