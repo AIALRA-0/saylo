@@ -19,6 +19,7 @@
   <a href="#1-project-value">Project and paths</a> ·
   <a href="#4-quick-start">Quick start</a> ·
   <a href="#2-learning-loop">Learning experience</a> ·
+  <a href="#21-one-complete-learning-task">Task evidence</a> ·
   <a href="#6-runtime-architecture">Architecture</a> ·
   <a href="#9-quality-validation">Validation</a> ·
   <a href="#12-contributing">Contributing</a>
@@ -32,9 +33,12 @@
 
 <img src="docs/images/saylo-learning-desktop.jpg" alt="Saylo desktop learning interface where a learner judges the scenario before studying an expression and transferring it to use" width="100%">
 
-Figure 1. Saylo desktop scenario judgment and progressive learning interface from the repository product capture dated 2026-08-24
+Figure 1.1. Saylo desktop scenario judgment and progressive learning interface from the repository product capture dated 2026-08-24
 
 </div>
+
+> [!CAUTION]
+> This is a local README pilot for human review and does not mean the remote `saylo` repository has been updated
 
 > [!NOTE]
 > Saylo is in public beta. Its curriculum structure and automated checks are established, while external review by a real American English teacher and source-community advisers remains pending
@@ -78,23 +82,40 @@ Local rules check literal matches, risk boundaries, and curriculum requirements
 
 Optional AI models analyze grammar, collocation, naturalness, and cultural fit
 
+### 2.1 One complete learning task
+
+The following task evidence connects the landing-page capture, learning flow, and observable results so readers do not have to infer the product behavior from separate screenshots
+
+<div align="center">
+
+Table 2.1. Task evidence from scenario judgment to transferred use
+
+| Stage | Learner action | Interface evidence | Observable result |
+|---:|---|---|---|
+| 1 Judge the situation | Identify the relationship, task, and purpose of the response | Scenario question and function choices on the learning page | State what the expression needs to accomplish in the current relationship |
+| 2 Understand its background | Review literal logic, examples, origin, spread, and confusable expressions | Layered cards on the understanding page | Separate meaning, spread, and usage boundaries |
+| 3 Produce an answer | Write a short response and run local evidence checks | Text-practice and curriculum requirements | See target-expression matches, length, repetition, and risk boundaries |
+| 4 Review and transfer | Enter review from the recall result, then reuse the expression in text or voice practice | Review scheduling and practice entry points | Receive the next review schedule and a new transfer task |
+
+</div>
+
 <div align="center">
 
 ```mermaid
 %% Start with scenario judgment and show how learning evidence reaches review and transfer
 flowchart TD
-    A[Judge the scenario and relationship] --> B[Understand literal structure]
-    B --> C[Separate origin from spread]
-    C --> D[Write a short personal response]
-    D --> E[Run local evidence checks]
-    E --> F[Use optional AI pragmatic critique]
-    F --> G[Enter spaced-repetition review]
-    G --> H[Transfer through text or voice practice]
+    A["Judge context<br/>relationship and scenario"] --> B["Understand origin<br/>literal form, origin, spread"]
+    B --> C["Produce actively<br/>short response, local checks"]
+    C --> D["Review and transfer<br/>AI critique, spacing, practice"]
 ```
 
 Figure 2.1. Saylo learning loop from understanding to transfer, based on the current repository flow
 
 </div>
+
+### 2.2 Interface evidence
+
+The primary image shows scenario judgment. The following three captures separately establish expression discovery, background understanding, and narrow-screen learning without repeating decorative variants of the same page
 
 <div align="center">
 
@@ -116,7 +137,7 @@ Figure 2.3. Saylo expression-background stage from the repository product captur
 
 <img src="docs/images/saylo-learning-mobile.jpg" alt="Saylo mobile learning interface with responsive navigation, scenario judgment, and an expression card" width="390">
 
-Figure 2.4. Saylo mobile interface from browser acceptance evidence at a 390-pixel viewport width
+Figure 2.4. Saylo mobile interface from a 375 × 811-pixel screenshot showing narrow-screen navigation, scenario judgment, and learning actions
 
 </div>
 
@@ -293,6 +314,25 @@ npm run verify # Run the complete test and production-build sequence
 According to the local `npm run verify` record dated 2026-08-24, 21 tests in four Vitest files, two Node.js server tests, the content audit, and the production build passed
 
 Real-browser acceptance covers first-run setup, baseline judgment, learning, review, text practice, expression search, risk details, progress, and backup
+
+### 9.1 README visual and evidence coverage
+
+This matrix records only what the current repository captures and local README preview can establish. Missing product states remain explicit evidence gaps
+
+<div align="center">
+
+Table 9.1. Saylo README visual validation scope
+
+| Scenario | Current evidence | Local-preview requirement | Evidence boundary |
+|---|---|---|---|
+| Desktop primary task | Three 1428 × 919-pixel product captures | Landing, discovery, and understanding content remain clear without page-level horizontal overflow | Captures cover the light product interface |
+| Narrow primary task | One 375 × 811-pixel product capture | The image scales completely while navigation and primary actions stay legible | Current material covers one mobile learning path |
+| Light README | Local GitHub-style rendering | Headings, badges, tables, images, and Mermaid remain clear | Does not establish identical product behavior in every browser |
+| Dark README | Local GitHub-style rendering | Transparent SVGs, text, and boundaries remain legible | The repository currently provides no product dark-theme capture |
+| Image failure | Alternative text, captions, and the task-evidence table | The learning task and first-success path remain understandable with images hidden | Cannot replace pixel-level interface detail |
+| External image-service failure | Badges and product captures are repository-local | Core content makes no third-party image request | Documentation links in the prose still require network access |
+
+</div>
 
 ## 10 Repository structure
 
