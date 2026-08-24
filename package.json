@@ -1,0 +1,36 @@
+{
+  "name": "saylo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"node --env-file-if-exists=.env --watch server/index.mjs\"",
+    "prebuild": "npm run audit:content",
+    "build": "tsc -b && vite build",
+    "check": "tsc -b --pretty false",
+    "test": "vitest run && node --test server/index.node-test.mjs",
+    "audit:content": "vitest run src/data/expressions.test.ts",
+    "verify": "npm test && npm run build",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "lucide-react": "^1.33.0",
+    "openai": "^7.5.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "ts-fsrs": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.0",
+    "concurrently": "^10.0.5",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.1"
+  }
+}

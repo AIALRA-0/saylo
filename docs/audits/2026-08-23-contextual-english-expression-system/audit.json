@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "contract_version": "1.0",
+    "title": "当代英语口语与俚语学习系统立项审计",
+    "mode": "standard",
+    "as_of": "2026-08-23",
+    "status": "complete",
+    "scope": "面向成年学习者的当代美国英语语用流利度系统，覆盖文本、语音、表达来源、场景适配、复习和迁移测量",
+    "exclusions": ["本轮不开发应用", "本轮不保存真实语音", "本轮不公开发布", "本轮不宣称社群认可"]
+  },
+  "decision_problem": {
+    "project_classification": "可复用的个人语言学习项目",
+    "risk_level": "中等，长期内容涉及真实交流、族裔身份、语音隐私和内容许可",
+    "decision_owner": "用户",
+    "desired_outcome": "通过理解、判断、反馈、问答、间隔练习和语音对话提高当代美国英语的自然表达和语境适配能力",
+    "current_state": "仓库为空，用户提出目标，但学习者基线、主要场景、内容边界和语音保存偏好尚未测量",
+    "decision": "是否把按族裔学习俚语的构想改写为按语境、关系、地区、代际、平台、来源社群和风险组织的系统，并先运行两周试点",
+    "success_metrics": ["新语境理解", "场景适配判断", "新角色任务产出", "误用修复", "七日保持", "高风险误用", "人工与自动反馈分歧"],
+    "constraints": ["用户先审核再执行", "时敏内容需要直接来源和复核日期", "不得根据肤色或声音推断使用权限", "语音默认最小保存", "公开访问不自动授予再发布许可"],
+    "irreversible_actions": ["公开发布课程", "长期保存原始语音", "宣称社群认可", "批量复制受限内容"],
+    "research_budget": {
+      "overall_limit": "一个规划回合，在决定性检索和三个独立审查结束后停止扩展",
+      "parallel_capacity": 3,
+      "paid_or_private_access": [],
+      "cutoff_policy": "付费墙记录为缺口；公开证据足以支持可逆试点时停止扩展"
+    },
+    "reversal_evidence": ["族裔顶层分类在真实评审中更准确且误用更少", "纯词义卡在陌生任务中同样有效", "现成产品已经完整覆盖目标", "试点没有收益或风险超过价值"]
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "族裔是否适合作为课程的顶层分类",
+      "critical": true,
+      "internal_probe": "核对用户原始分类和项目材料",
+      "external_probe": "核对 AAL 系统性、内部差异和族裔语言边界",
+      "internal_status": "answered",
+      "external_status": "answered",
+      "internal_source_ids": ["S-I1", "S-I2"],
+      "external_source_ids": ["S-E2"],
+      "internal_gap": "",
+      "external_gap": ""
+    },
+    {
+      "id": "Q2",
+      "question": "教学应如何组合词汇、语块、语境、检索和反馈",
+      "critical": true,
+      "internal_probe": "核对用户对背单词的判断和已有学习数据",
+      "external_probe": "核对语块教学、反馈和真实任务证据",
+      "internal_status": "answered",
+      "external_status": "answered",
+      "internal_source_ids": ["S-I1", "S-I2"],
+      "external_source_ids": ["S-E1", "S-E3"],
+      "internal_gap": "",
+      "external_gap": ""
+    },
+    {
+      "id": "Q3",
+      "question": "项目应从零开发还是先组合成熟工具",
+      "critical": true,
+      "internal_probe": "核对仓库代码、依赖和历史实现",
+      "external_probe": "核对开源平台、复习、视频语境和语音产品",
+      "internal_status": "answered",
+      "external_status": "answered",
+      "internal_source_ids": ["S-I2", "S-I1"],
+      "external_source_ids": ["S-E4", "S-E5", "S-E6", "S-E7"],
+      "internal_gap": "",
+      "external_gap": ""
+    },
+    {
+      "id": "Q4",
+      "question": "语音、自动反馈、文化风险和内容许可采用什么边界",
+      "critical": true,
+      "internal_probe": "核对语音授权、真实评审和许可记录",
+      "external_probe": "核对实时语音、识别偏差、AI 局限和数据许可",
+      "internal_status": "answered",
+      "external_status": "answered",
+      "internal_source_ids": ["S-I1", "S-I2"],
+      "external_source_ids": ["S-E8", "S-E9", "S-E10", "S-E11", "S-E12"],
+      "internal_gap": "",
+      "external_gap": ""
+    }
+  ],
+  "source_map": [
+    {"id": "M1I", "question_ids": ["Q1"], "origin": "internal", "channel": "用户需求与工作区", "target": "族裔分类和现有材料", "decision_use": "确定当前假设", "priority": "high", "access_status": "searched"},
+    {"id": "M1E", "question_ids": ["Q1"], "origin": "external", "channel": "大学语言学项目", "target": "AAL 系统性与内部差异", "decision_use": "检验族裔分类", "priority": "high", "access_status": "searched"},
+    {"id": "M2I", "question_ids": ["Q2"], "origin": "internal", "channel": "用户需求与项目数据", "target": "背词体验和学习基线", "decision_use": "确定教学对照", "priority": "high", "access_status": "searched"},
+    {"id": "M2E", "question_ids": ["Q2"], "origin": "external", "channel": "研究与教学机构", "target": "语块、反馈和真实任务", "decision_use": "设计可证伪闭环", "priority": "high", "access_status": "searched"},
+    {"id": "M3I", "question_ids": ["Q3"], "origin": "internal", "channel": "本地仓库", "target": "代码和历史依赖", "decision_use": "判断开发必要性", "priority": "high", "access_status": "searched"},
+    {"id": "M3E", "question_ids": ["Q3"], "origin": "external", "channel": "产品页与代码仓库", "target": "近似产品和组件", "decision_use": "确定复用路线", "priority": "high", "access_status": "searched"},
+    {"id": "M4I", "question_ids": ["Q4"], "origin": "internal", "channel": "用户授权与项目材料", "target": "语音偏好、评审和许可", "decision_use": "确定安全范围", "priority": "high", "access_status": "searched"},
+    {"id": "M4E", "question_ids": ["Q4"], "origin": "external", "channel": "官方文档与研究", "target": "语音、偏差、AI 局限和许可", "decision_use": "建立保护边界", "priority": "high", "access_status": "searched"}
+  ],
+  "sources": [
+    {
+      "id": "S-I1", "origin": "internal", "title": "用户本次需求", "location": "conversation:user-request-2026-08-23", "source_type": "internal-artifact", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "直接说明目标和先审核后执行的要求", "limitations": "缺少学习基线和数据偏好", "retrieval_method": "读取当前用户原文", "observed_content": "用户希望通过流行表达、问答、练习、反馈和语音提高自然度", "direct": true, "independence_group": "user-brief"
+    },
+    {
+      "id": "S-I2", "origin": "internal", "title": "工作区检查", "location": "workspace:project-root", "source_type": "internal-artifact", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "确定已有实现和迁移范围", "limitations": "空仓库不能提供学习表现", "retrieval_method": "列出工作区文件", "observed_content": "审计开始时没有代码、课程、测试或学习记录", "direct": true, "independence_group": "workspace"
+    },
+    {
+      "id": "S-IA1", "origin": "internal", "title": "独立证据审计", "location": "collaboration:/root/evidence_audit", "source_type": "agent-artifact", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查教学证据和假设", "limitations": "不能代替真实试验", "retrieval_method": "读取隔离任务产物", "observed_content": "建议保留词汇学习并加入语块、语境、反馈和迁移", "direct": true, "independence_group": "agent-evidence"
+    },
+    {
+      "id": "S-IA2", "origin": "internal", "title": "独立方案猎手审计", "location": "collaboration:/root/solution_hunt", "source_type": "agent-artifact", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查产品、代码和失败案例", "limitations": "未登录付费课程", "retrieval_method": "读取隔离任务产物", "observed_content": "没有完整替代品，但现成组合覆盖大部分功能", "direct": true, "independence_group": "agent-solution"
+    },
+    {
+      "id": "S-IA3", "origin": "internal", "title": "独立利益面审计", "location": "collaboration:/root/stakeholder_audit", "source_type": "agent-artifact", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查文化、隐私和社群风险", "limitations": "没有真实利益相关者访谈", "retrieval_method": "读取隔离任务产物", "observed_content": "建议双轨记录来源与扩散，并分级产出和最小保存语音", "direct": true, "independence_group": "agent-stakeholder"
+    },
+    {
+      "id": "S-E1", "origin": "external", "title": "Experimental and Intervention Studies on Formulaic Sequences in a Second Language", "location": "https://doi.org/10.1017/S0267190512000050", "source_type": "primary-research", "date": "2012-12-05", "accessed_at": "2026-08-23", "applicability": "核查语块和刻意词汇学习", "limitations": "研究条件不同于当前个人系统", "retrieval_method": "打开出版社直接页面", "observed_content": "语块学习有价值，关注、查询和记忆活动均可发挥作用，刻意词汇练习也能提高保持", "direct": true, "independence_group": "cambridge-formulaic"
+    },
+    {
+      "id": "S-E2", "origin": "external", "title": "On African American Language and Grammatical Diversity in 2020", "location": "https://ygdp.yale.edu/african-american-language-and-grammatical-diversity-2020", "source_type": "official-doc", "date": "2020-01-01", "accessed_at": "2026-08-23", "applicability": "核查 AAL 系统性与内部差异", "limitations": "不能替代具体表达的当前社群评审", "retrieval_method": "打开 Yale 官方项目页面", "observed_content": "AAL 有系统语法和内部差异，部分形式会跨社群扩散", "direct": true, "independence_group": "yale-ygdp"
+    },
+    {
+      "id": "S-E3", "origin": "external", "title": "ACTFL Feedback and Proficiency Guidance", "location": "https://www.actfl.org/educator-resources/guiding-principles-for-language-learning/provide-effective-feedback", "source_type": "official-doc", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "设计具体反馈和真实任务测量", "limitations": "通用框架没有俚语专用量表", "retrieval_method": "打开 ACTFL 官方页面", "observed_content": "反馈应具体及时且关联目标，真实能力需要按任务和语境描述", "direct": true, "independence_group": "actfl"
+    },
+    {
+      "id": "S-E4", "origin": "external", "title": "OpenLingo Official Repository", "location": "https://github.com/pretzelai/openlingo", "source_type": "source-code", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查开源学习平台骨架", "limitations": "未完成依赖安全审计", "retrieval_method": "打开官方仓库和许可", "observed_content": "MIT 项目提供对话、记忆、练习、复习和语音", "direct": true, "independence_group": "openlingo"
+    },
+    {
+      "id": "S-E5", "origin": "external", "title": "Anki FSRS Manual", "location": "https://docs.ankiweb.net/deck-options.html#fsrs", "source_type": "official-doc", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查可复用复习调度", "limitations": "不提供语用内容", "retrieval_method": "打开 Anki 官方手册", "observed_content": "Anki 已内置 FSRS 并按记忆状态安排复习", "direct": true, "independence_group": "anki"
+    },
+    {
+      "id": "S-E6", "origin": "external", "title": "Language Reactor Get Started", "location": "https://www.languagereactor.com/help/basic", "source_type": "product-page", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查视频语境工作流", "limitations": "依赖平台和字幕，机器翻译会出错", "retrieval_method": "打开官方说明", "observed_content": "提供双语字幕、回放、词义和保存", "direct": true, "independence_group": "language-reactor"
+    },
+    {
+      "id": "S-E7", "origin": "external", "title": "ELSA Roleplay Feedback", "location": "https://elsanow.freshdesk.com/en/support/solutions/articles/31000177729-communication-skills-feedback-for-standalone-roleplays", "source_type": "product-page", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查角色扮演和语域反馈", "limitations": "厂商说明不能证明效果", "retrieval_method": "打开官方支持页面", "observed_content": "角色扮演后提供相关性、语域、礼貌和信心反馈", "direct": true, "independence_group": "elsa"
+    },
+    {
+      "id": "S-E8", "origin": "external", "title": "Racial Disparities in Automated Speech Recognition", "location": "https://doi.org/10.1073/pnas.1915768117", "source_type": "primary-research", "date": "2020-03-23", "accessed_at": "2026-08-23", "applicability": "核查 ASR 分组误差风险", "limitations": "旧系统结果不能代表当前拟用模型", "retrieval_method": "打开 PNAS 直接页面", "observed_content": "研究观察到黑人和白人说话者之间的词错率差异", "direct": true, "independence_group": "pnas-asr"
+    },
+    {
+      "id": "S-E9", "origin": "external", "title": "AI-driven Chatbots in Second Language Education", "location": "https://doi.org/10.1016/j.amper.2025.100224", "source_type": "primary-research", "date": "2025-01-01", "accessed_at": "2026-08-23", "applicability": "核查 AI 教师收益和局限", "limitations": "长期迁移证据有限", "retrieval_method": "打开系统综述", "observed_content": "聊天教师增加练习机会，但文化语境和复杂反馈仍有局限", "direct": true, "independence_group": "chatbot-review"
+    },
+    {
+      "id": "S-E10", "origin": "external", "title": "Wikimedia Dump License", "location": "https://dumps.wikimedia.org/legal.html", "source_type": "official-doc", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查 Wiktionary 文本许可", "limitations": "仍需检查具体内容权利", "retrieval_method": "打开官方许可页", "observed_content": "文本通常采用 GFDL 和 CC BY-SA 4.0", "direct": true, "independence_group": "wikimedia"
+    },
+    {
+      "id": "S-E11", "origin": "external", "title": "Tatoeba Downloads", "location": "https://tatoeba.org/en/downloads", "source_type": "official-doc", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查例句和音频许可", "limitations": "例句不保证当代美国自然度", "retrieval_method": "打开官方下载页", "observed_content": "句子和音频采用多种许可，空许可音频不能外部复用", "direct": true, "independence_group": "tatoeba"
+    },
+    {
+      "id": "S-E12", "origin": "external", "title": "OpenAI Realtime Model", "location": "https://developers.openai.com/api/docs/models/gpt-realtime-1.5", "source_type": "official-doc", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "核查实时音频能力", "limitations": "能力不能证明教学效果", "retrieval_method": "打开官方开发文档", "observed_content": "模型支持实时音频输入和输出", "direct": true, "independence_group": "openai-docs"
+    },
+    {"id": "SL-PROBLEM", "origin": "external", "title": "问题分支查询记录", "location": "tool:web/search/problem-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录同类学习问题", "limitations": "不覆盖封闭工具", "retrieval_method": "公开网页查询", "observed_content": "发现角色扮演和即时反馈候选", "direct": true, "independence_group": "search-problem"},
+    {"id": "SL-MECHANISM", "origin": "external", "title": "机制分支查询记录", "location": "tool:web/search/mechanism-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录语块和反馈机制", "limitations": "部分全文付费", "retrieval_method": "研究与机构查询", "observed_content": "发现语块综述和反馈原则", "direct": true, "independence_group": "search-mechanism"},
+    {"id": "SL-PRODUCT", "origin": "external", "title": "产品分支查询记录", "location": "tool:web/search/product-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录产品能力", "limitations": "未登录付费课程", "retrieval_method": "官方产品页查询", "observed_content": "发现近似产品但没有完整替代品", "direct": true, "independence_group": "search-product"},
+    {"id": "SL-CODE", "origin": "external", "title": "代码分支查询记录", "location": "tool:web/search/code-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录开源项目", "limitations": "未做安全审计", "retrieval_method": "官方仓库查询", "observed_content": "OpenLingo 和 Anki 覆盖应用骨架", "direct": true, "independence_group": "search-code"},
+    {"id": "SL-RESEARCH", "origin": "external", "title": "研究分支查询记录", "location": "tool:web/search/research-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录学习研究", "limitations": "缺少整合全部模块的长期试验", "retrieval_method": "论文直接页查询", "observed_content": "研究支持语块、反馈和延迟练习", "direct": true, "independence_group": "search-research"},
+    {"id": "SL-ADJACENT", "origin": "external", "title": "邻近分支查询记录", "location": "tool:web/search/adjacent-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录社会语言学和许可", "limitations": "查询权不等于再发布权", "retrieval_method": "语言学和许可页查询", "observed_content": "来源和扩散需要双轨记录", "direct": true, "independence_group": "search-adjacent"},
+    {"id": "SL-FAILURE", "origin": "external", "title": "失败分支查询记录", "location": "tool:web/search/failure-2026-08-23", "source_type": "search-log", "date": "2026-08-23", "accessed_at": "2026-08-23", "applicability": "记录偏差和平台风险", "limitations": "历史失败不代表所有当前系统", "retrieval_method": "论文和官方说明查询", "observed_content": "发现 ASR 偏差和 AI 语用局限", "direct": true, "independence_group": "search-failure"}
+  ],
+  "claims": [
+    {"id": "C1", "statement": "用户希望通过反馈、问答、练习和语音提高自然表达", "kind": "fact", "impact": "high", "confidence": "high", "support_source_ids": ["S-I1"], "contradict_source_ids": [], "falsifier": "用户改为只要求被动理解或考试词汇"},
+    {"id": "C2", "statement": "族裔不适合作为稳定顶层分类，来源社群应保留为元数据", "kind": "inference", "impact": "high", "confidence": "high", "support_source_ids": ["S-E2", "S-IA1", "S-IA3"], "contradict_source_ids": [], "falsifier": "真实跨地区评审显示族裔分类更准确且误用更少"},
+    {"id": "C3", "statement": "完全放弃词汇记忆会损失有效工具，学习单位应升级为带语境的表达卡", "kind": "inference", "impact": "high", "confidence": "high", "support_source_ids": ["S-E1", "S-E3", "S-IA1"], "contradict_source_ids": [], "falsifier": "等时实验显示纯词义卡在陌生任务中持续更好"},
+    {"id": "C4", "statement": "现成方案已覆盖视频语境、语音角色扮演、反馈和间隔复习的大部分能力", "kind": "fact", "impact": "high", "confidence": "high", "support_source_ids": ["S-E4", "S-E5", "S-E6", "S-E7", "S-IA2"], "contradict_source_ids": [], "falsifier": "实际核验显示页面所述能力不能使用"},
+    {"id": "C5", "statement": "ASR 不能作为口音、自然度或社群适配的唯一裁判", "kind": "inference", "impact": "high", "confidence": "high", "support_source_ids": ["S-E8", "S-E9", "S-IA3"], "contradict_source_ids": [], "falsifier": "拟用系统通过目标说话者分组测试并与多名人工评审长期一致"},
+    {"id": "C6", "statement": "公开词典、例句、音频和视频需要逐项检查许可", "kind": "fact", "impact": "high", "confidence": "high", "support_source_ids": ["S-E10", "S-E11", "S-IA2"], "contradict_source_ids": [], "falsifier": "权利人提供覆盖全部预定用途的统一授权"}
+  ],
+  "assumptions": [
+    {"id": "A1", "statement": "学习者足以理解中性会话并讨论语域", "critical": true, "status": "untested", "decision_impact": "若不足则先提升中性会话能力", "falsifier": "基线显示中性互动仍频繁失败", "support_source_ids": [], "contradict_source_ids": []},
+    {"id": "A2", "statement": "现成工具足以支撑两周试点", "critical": true, "status": "supported", "decision_impact": "若失败则提前评估应用骨架", "falsifier": "试点无法记录表现或运行延迟测试", "support_source_ids": ["S-E4", "S-E5", "S-E12"], "contradict_source_ids": []},
+    {"id": "A3", "statement": "来源、扩散和产出分级会降低误用", "critical": true, "status": "untested", "decision_impact": "若失败则差异化价值消失", "falsifier": "盲评显示风险层没有改善误用或迁移", "support_source_ids": ["S-E2", "S-IA3"], "contradict_source_ids": []}
+  ],
+  "search_branches": [
+    {"name": "adjacent", "status": "executed", "reason": "", "round_ids": ["R-ADJACENT"]},
+    {"name": "code", "status": "executed", "reason": "", "round_ids": ["R-CODE"]},
+    {"name": "failure", "status": "executed", "reason": "", "round_ids": ["R-FAILURE"]},
+    {"name": "mechanism", "status": "executed", "reason": "", "round_ids": ["R-MECHANISM"]},
+    {"name": "patent", "status": "not_applicable", "reason": "本轮不主张专利性、排他权或法律新颖性", "round_ids": []},
+    {"name": "problem", "status": "executed", "reason": "", "round_ids": ["R-PROBLEM"]},
+    {"name": "product", "status": "executed", "reason": "", "round_ids": ["R-PRODUCT"]},
+    {"name": "research", "status": "executed", "reason": "", "round_ids": ["R-RESEARCH"]}
+  ],
+  "search_rounds": [
+    {"id": "R-PROBLEM", "branch": "problem", "query": "English slang learning contextual conversation", "channel": "公开网页", "date": "2026-08-23", "discovery_mode": "问题关键词", "new_candidate_ids": ["P-OPENLINGO", "P-ELSA", "P-LR"], "evidence_source_ids": ["S-E4", "S-E6", "S-E7"], "search_log_source_id": "SL-PROBLEM", "new_high_similarity_count": 2, "new_decision_evidence_count": 1},
+    {"id": "R-MECHANISM", "branch": "mechanism", "query": "formulaic sequences feedback authentic language tasks", "channel": "研究与 ACTFL", "date": "2026-08-23", "discovery_mode": "机制与引用", "new_candidate_ids": ["P-ANKI"], "evidence_source_ids": ["S-E1", "S-E3", "S-E5"], "search_log_source_id": "SL-MECHANISM", "new_high_similarity_count": 0, "new_decision_evidence_count": 2},
+    {"id": "R-PRODUCT", "branch": "product", "query": "AI speaking roleplay video context spaced repetition", "channel": "官方产品页", "date": "2026-08-23", "discovery_mode": "能力矩阵", "new_candidate_ids": [], "evidence_source_ids": ["S-E6", "S-E7"], "search_log_source_id": "SL-PRODUCT", "new_high_similarity_count": 1, "new_decision_evidence_count": 1},
+    {"id": "R-CODE", "branch": "code", "query": "open source language tutor voice spaced repetition", "channel": "GitHub", "date": "2026-08-23", "discovery_mode": "仓库与许可", "new_candidate_ids": [], "evidence_source_ids": ["S-E4", "S-E5"], "search_log_source_id": "SL-CODE", "new_high_similarity_count": 1, "new_decision_evidence_count": 1},
+    {"id": "R-RESEARCH", "branch": "research", "query": "slang formulaic feedback pragmatics ASR language learning", "channel": "论文直接页", "date": "2026-08-23", "discovery_mode": "系统综述", "new_candidate_ids": [], "evidence_source_ids": ["S-E1", "S-E8", "S-E9"], "search_log_source_id": "SL-RESEARCH", "new_high_similarity_count": 0, "new_decision_evidence_count": 3},
+    {"id": "R-ADJACENT", "branch": "adjacent", "query": "sociolinguistics AAL dictionary corpus licensing", "channel": "语言学与许可页", "date": "2026-08-23", "discovery_mode": "邻近迁移", "new_candidate_ids": ["P-WIKIMEDIA", "P-TATOEBA"], "evidence_source_ids": ["S-E2", "S-E10", "S-E11"], "search_log_source_id": "SL-ADJACENT", "new_high_similarity_count": 0, "new_decision_evidence_count": 2},
+    {"id": "R-FAILURE", "branch": "failure", "query": "ASR dialect bias chatbot pragmatics failure", "channel": "论文与官方说明", "date": "2026-08-23", "discovery_mode": "反向失败", "new_candidate_ids": [], "evidence_source_ids": ["S-E8", "S-E9"], "search_log_source_id": "SL-FAILURE", "new_high_similarity_count": 0, "new_decision_evidence_count": 2}
+  ],
+  "candidates": [
+    {"id": "P-OPENLINGO", "name": "OpenLingo", "class": "near", "verified": true, "source_ids": ["S-E4"]},
+    {"id": "P-LR", "name": "Language Reactor", "class": "near", "verified": true, "source_ids": ["S-E6"]},
+    {"id": "P-ELSA", "name": "ELSA Speak", "class": "partial", "verified": true, "source_ids": ["S-E7"]},
+    {"id": "P-ANKI", "name": "Anki FSRS", "class": "partial", "verified": true, "source_ids": ["S-E5"]},
+    {"id": "P-WIKIMEDIA", "name": "Wikimedia dictionary data", "class": "partial", "verified": true, "source_ids": ["S-E10"]},
+    {"id": "P-TATOEBA", "name": "Tatoeba data", "class": "partial", "verified": true, "source_ids": ["S-E11"]}
+  ],
+  "novelty": {
+    "applicable": true,
+    "applicability_reason": "用户允许复用成熟项目，需要判断替代品和组件",
+    "assessment": "near-match-found",
+    "stop_reason": "decisive-match",
+    "saturation_round_ids": [],
+    "languages": ["en", "zh"],
+    "regions": ["United States", "global public web"],
+    "access_gaps": [
+      {"resource": "付费课程内部内容", "impact": "无法逐课核验，但不影响可逆试点", "critical": false},
+      {"resource": "封闭企业工具和付费接口", "impact": "开放网络覆盖有缺口，结论不外推到全部市场", "critical": false}
+    ],
+    "scope_statement": "截至 2026-08-23 检查公开产品页、仓库、机构资料和研究；确认近似方案，未确认完整单体替代品"
+  },
+  "perspectives": [
+    {"id": "V1", "lens": "证据与假设", "producer": "subagent:evidence_audit", "producer_type": "subagent", "producer_reference": "/root/evidence_audit", "independent": true, "context_isolated": true, "provenance_source_id": "S-IA1", "source_ids": ["S-IA1", "S-E1", "S-E3"], "findings": ["保留词汇学习", "加入语块语境反馈和迁移", "自然度分维度测量"], "limitations": "未运行真实试验"},
+    {"id": "V2", "lens": "现有方案与失败案例", "producer": "subagent:solution_hunt", "producer_type": "subagent", "producer_reference": "/root/solution_hunt", "independent": true, "context_isolated": true, "provenance_source_id": "S-IA2", "source_ids": ["S-IA2", "S-E4", "S-E5", "S-E6", "S-E7"], "findings": ["没有完整替代品", "现成组合覆盖基础功能", "新增价值聚焦风险层和迁移"], "limitations": "未登录付费课程"},
+    {"id": "V3", "lens": "文化边界与语音隐私", "producer": "subagent:stakeholder_audit", "producer_type": "subagent", "producer_reference": "/root/stakeholder_audit", "independent": true, "context_isolated": true, "provenance_source_id": "S-IA3", "source_ids": ["S-IA3", "S-E2", "S-E8"], "findings": ["族裔分类会同质化", "双轨记录来源和扩散", "高风险理解优先并最小保存语音"], "limitations": "没有真实利益相关者访谈"}
+  ],
+  "real_world_validations": [
+    {"id": "RW1", "role": "目标学习者", "participant_reference": "current-user", "method": "基线和两周个人试点", "conducted_at": "2026-08-23", "outcome": "等待审核后执行", "limitations": "本轮没有行为数据", "status": "planned", "evidence_source_ids": []},
+    {"id": "RW2", "role": "社群与教师评审者", "participant_reference": "reviewers-to-be-recruited", "method": "独立评审具体表达和盲评迁移任务", "conducted_at": "2026-08-23", "outcome": "高风险产出或公开发布前完成", "limitations": "尚未招募，不能宣称社群认可", "status": "planned", "evidence_source_ids": []}
+  ],
+  "alignment_questions": [
+    {"id": "AQ1", "question": "首批内容覆盖哪些场景", "decision_changing": true, "status": "defaulted", "default_value": "美国日常、工作社交、网络文化和朋友聊天"},
+    {"id": "AQ2", "question": "高风险内容采用什么边界", "decision_changing": true, "status": "defaulted", "default_value": "黄色理解优先，红色只做识别、历史和修复"},
+    {"id": "AQ3", "question": "语音材料怎样保存", "decision_changing": true, "status": "defaulted", "default_value": "使用现有语音或文本对话，仓库只保存必要文字复盘"}
+  ],
+  "recommendation": {
+    "verdict": "reframe",
+    "action": "把项目改写为当代美国英语语用流利度系统，用户审核后先运行两周可逆试点",
+    "rationale": "语言学证据反对族裔单体分类，教学证据支持词汇与语境互补，现成工具已覆盖基础能力",
+    "strongest_counterevidence": "词汇学习有效且现成产品组合已能完成大部分体验，新增系统可能增加成本却不改善真实对话",
+    "minimum_test": "用 24 个未知表达建立 12 个匹配对，等时比较语境闭环和词义卡，并在七日后用陌生场景测试",
+    "failure_response": "没有收益时缩减课程并停止应用开发；风险误用时收紧产出；手工流程成瓶颈时再评估 OpenLingo",
+    "reversal_condition": "现成产品完整覆盖目标并有真人迁移证据，或试点显示风险层不能改善误用和迁移",
+    "support_source_ids": ["S-E1", "S-E2", "S-E4", "S-E5", "S-E8", "S-IA1", "S-IA2", "S-IA3"],
+    "counter_source_ids": ["S-E1", "S-E4", "S-E6", "S-E7"]
+  },
+  "review_triggers": ["连续两轮指标停滞", "出现高风险误用或伤害反馈", "自动反馈与人工连续冲突", "完整替代产品出现", "目标场景或地区改变", "许可或隐私条款改变", "手工同步成为瓶颈"]
+}
